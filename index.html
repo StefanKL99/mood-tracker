@@ -8,8 +8,40 @@
 </head>
 <body>
   <main id="app">
+  <header>
     <h1>Mood Tracker</h1>
-  </main>
+    <p class="subtitle">How are you feeling?</p>
+  </header>
+
+  <section id="mood-section" aria-labelledby="mood-heading">
+    <h2 id="mood-heading" class="visually-hidden">Select your mood</h2>
+    <div id="mood-selector" class="mood-selector">
+      <button type="button" class="mood-btn" data-mood="Anxious" data-score="1">Anxious</button>
+      <button type="button" class="mood-btn" data-mood="Low" data-score="2">Low</button>
+      <button type="button" class="mood-btn" data-mood="Neutral" data-score="3">Neutral</button>
+      <button type="button" class="mood-btn" data-mood="Calm" data-score="4">Calm</button>
+      <button type="button" class="mood-btn" data-mood="Happy" data-score="5">Happy</button>
+    </div>
+  </section>
+
+  <section id="entry-section">
+    <form id="entry-form">
+      <label for="note">Add a note (optional)</label>
+      <textarea id="note" rows="3" placeholder="What's on your mind?"></textarea>
+      <button type="submit" id="log-btn" class="primary-btn">Log mood</button>
+    </form>
+  </section>
+
+  <section id="chart-section" aria-labelledby="chart-heading">
+    <h2 id="chart-heading">This week</h2>
+    <div id="chart" class="chart"></div>
+  </section>
+
+  <section id="entries-section" aria-labelledby="entries-heading">
+    <h2 id="entries-heading">Recent entries</h2>
+    <ul id="entries-list" class="entries-list"></ul>
+  </section>
+</main>
   <script src="app.js"></script>
 </body>
 </html>

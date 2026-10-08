@@ -1,0 +1,108 @@
+:root {
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --accent: #4f6df5;
+  --border: #e2e0da;
+  --radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+#app {
+  max-width: 420px; /* phone-width column, matching the mobile mockup */
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+h1 { margin: 0; font-size: 1.6rem; }
+h2 { font-size: 1.1rem; margin: 2rem 0 0.75rem; }
+.subtitle { margin: 0.25rem 0 1.5rem; color: var(--muted); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Mood selector */
+.mood-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.mood-btn {
+  flex: 1 1 calc(33% - 0.5rem);
+  padding: 0.75rem 0.5rem;
+  font: inherit;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.mood-btn:hover { border-color: var(--accent); }
+
+.mood-btn.selected {
+  border-color: var(--accent);
+  background: #eef1ff;
+  font-weight: 600;
+}
+
+/* Entry form */
+#entry-form { margin-top: 1.5rem; display: grid; gap: 0.5rem; }
+
+textarea {
+  font: inherit;
+  padding: 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  resize: vertical;
+}
+
+.primary-btn {
+  padding: 0.85rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.primary-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Chart + entries (filled in later by JS) */
+.chart {
+  min-height: 160px;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.entries-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.entries-list li {
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
